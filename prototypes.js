@@ -7,18 +7,17 @@ const food = {
    }
 }
 
-// food.init('waffle');
-// food.eat();
-
 const waffle = Object.create(food);
 const carrot = Object.create(food); // note object.create does not create a copy
 
+carrot.init('carrot');
+carrot.eat();
+
+// You can defined food's eat to affact waffle's call of eat
 food.eat = function() {
    console.log('YOU TOTALLY ATE THE '  + this.type.toUpperCase());
 }
+
 console.log(waffle);
 waffle.init('waffle');
 waffle.eat();
-
-carrot.init('carrot');
-carrot.eat();
